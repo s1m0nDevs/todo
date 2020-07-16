@@ -1,0 +1,163 @@
+body
+    margin: 0
+    margin-top: 50px
+    background: #000 url("https://images.pexels.com/photos/1707820/pexels-photo-1707820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center fixed
+    background-size: cover
+
+    &:before 
+        content: ''
+        background-color: #000
+        opacity: 0.4
+        width: 100%
+        height: 100%
+        z-index: -1
+        position: absolute
+        top: 0
+        left: 0
+        
+
+    .App
+        margin: 0 auto
+        max-width: 500px
+
+        .done
+            text-decoration: line-through
+
+        form
+            background: #fff
+            border-radius: 5px
+            margin-bottom: 25px
+            padding: 10px 30px
+            display: flex
+            justify-content: space-between
+            border: 2px solid #ccc
+            box-sizing: border-box
+            transition: border 350ms
+
+            &:focus-within
+                border: 2px solid #2e8ece
+                button
+                    visibility: visible
+                    opacity: 1
+
+            input[type="text"]
+                border: none
+                outline: none
+                width: 100%
+                &::placeholder
+                    color: #2e8ece
+                    font-weight: bold
+                    cursor: pointer
+                &:focus
+                    &::placeholder
+                        color: #cccccc
+                        cursor: auto
+                
+            
+            button
+                border: none
+                background: none
+                outline: none
+                color: #2e8ece
+                font-size: 13px
+                font-weight: bold
+                visibility: hidden
+                cursor: pointer
+                opacity: 0
+                transition: opacity 350ms
+        h1
+            font-family: 'Balsamiq Sans', cursive
+            font-size: 50px
+            color: #ffffff
+            text-align: center
+            margin: 0 0 20px 0
+
+        ul 
+            padding: 0
+            margin: 0
+
+            li
+                list-style: none
+                margin-bottom: 10px
+                .item
+                    background: #fff
+                    padding: 10px
+                    border-radius: 5px
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+
+                    label
+                        display: flex
+                        position: relative
+                        cursor: pointer
+                        // &:hover input ~ .custom-checkbox
+                        //     background-color: #ccc
+
+                        input
+                            visibility: hidden
+                            &:checked ~ .custom-checkbox::after
+                                visibility: visible
+                                opacity: 1
+                            &:checked ~ .custom-checkbox 
+                                background-color: #2e8ece
+                      
+                        .custom-checkbox
+                            position: absolute
+                            top: 0
+                            left: 0
+                            height: 19px
+                            width: 19px
+                            background-color: #eee
+                            border-radius: 50%
+                            border: 2px solid #2e8ece
+                            box-sizing: border-box
+                            transition: background-color 350ms
+
+                            &::after
+                                content: ""
+                                position: absolute
+                                visibility: hidden
+                                left: 5px
+                                top: 2px
+                                width: 4px
+                                height: 8px
+                                border: solid white
+                                border-width: 0 3px 3px 0
+                                -webkit-transform: rotate(45deg)
+                                -ms-transform: rotate(45deg)
+                                transform: rotate(45deg)
+                                opacity: 0
+                                transition: opacity 350ms
+                                
+
+
+                    p
+                        display: inline
+                        flex: 20
+                        margin: 0    
+
+                    .close-btn
+                        opacity: 0.3
+                        outline: none
+                        border: none
+                        background: none
+                        color: red
+                        font-weight: bold
+                        font-size: 18px
+                        cursor: pointer
+
+                        &:hover
+                            opacity: 1
+
+                    strong
+                        margin: 0 10px 0 5px
+                        display: flex
+                        flex: 1
+        
+        .no-todos
+            font-family: 'Balsamiq Sans', cursive
+            font-size: 25px
+            color: #ffffff
+            text-align: center
+            text-decoration: underline
